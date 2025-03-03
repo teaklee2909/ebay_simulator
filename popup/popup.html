@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mô Phỏng Hoạt Động eBay</title>
+  <link rel="stylesheet" href="popup.css">
+  <meta charset="UTF-8">
+</head>
+<body>
+  <div class="container fade-in">
+    <h2>Mô Phỏng Hoạt Động eBay</h2>
+
+    <div class="status-section">
+      <div class="status-indicator">
+        <span class="status-dot"></span>
+        <span id="status-text">Không hoạt động</span>
+      </div>
+    </div>
+
+    <div class="settings-section">
+      <div class="setting-group">
+        <h3>Từ Khóa Tìm Kiếm</h3>
+        <p class="hint">Nhập mỗi từ khóa trên một dòng mới:</p>
+        <textarea 
+          id="keywords" 
+          placeholder="laptop chơi game
+tai nghe không dây
+đồng hồ thông minh"
+          title="Nhập một từ khóa trên mỗi dòng"
+          spellcheck="false"
+        ></textarea>
+      </div>
+
+      <div class="setting-group">
+        <h3>Cài Đặt Thời Gian</h3>
+        <div class="setting-item">
+          <label for="viewDuration">Thời gian xem (giây):</label>
+          <input 
+            type="number" 
+            id="viewDuration" 
+            min="10" 
+            max="30" 
+            value="15"
+            title="Thời gian xem mỗi sản phẩm"
+          >
+        </div>
+
+        <div class="setting-item">
+          <label for="pauseDuration">Thời gian nghỉ (giây):</label>
+          <input 
+            type="number" 
+            id="pauseDuration" 
+            min="30" 
+            max="300" 
+            value="60"
+            title="Thời gian nghỉ giữa các lượt tìm kiếm"
+          >
+        </div>
+      </div>
+
+      <div class="setting-group">
+        <h3>Cài Đặt Tương Tác</h3>
+        <div class="setting-item">
+          <label for="viewImages">Xem ảnh sản phẩm:</label>
+          <input 
+            type="checkbox" 
+            id="viewImages" 
+            checked
+            title="Tự động xem ảnh sản phẩm"
+          >
+        </div>
+
+        <div class="setting-item">
+          <label for="naturalScroll">Cuộn tự nhiên:</label>
+          <input 
+            type="checkbox" 
+            id="naturalScroll" 
+            checked
+            title="Sử dụng cuộn trang tự nhiên"
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="button-section">
+      <button id="startBtn" class="primary-btn" title="Bắt đầu mô phỏng">Bắt đầu</button>
+      <button id="pauseBtn" class="secondary-btn" disabled title="Tạm dừng mô phỏng">Tạm dừng</button>
+      <button id="resumeBtn" class="secondary-btn" disabled title="Tiếp tục mô phỏng">Tiếp tục</button>
+      <button id="stopBtn" class="secondary-btn" disabled title="Dừng mô phỏng">Dừng</button>
+    </div>
+
+    <div class="setting-group">
+      <h3>Nhật Ký Hoạt Động</h3>
+      <div id="activityLog" class="log-container"></div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9196c36c7ef312db',t:'MTc0MDgxMjI3OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+/* Enhanced popup styles with better organization and performance */
+
+:root {
+  --primary-color: #e53238;
+  --secondary-color: #0064d2;
+  --success-color: #86b817;
+  --warning-color: #f5af02;
+  --error-color: #dd1e31;
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --border-color: #e5e5e5;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Base styles */
+body {
+  width: 400px;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color: var(--text-color);
+  background: var(--background-color);
+  margin: 0;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Typography */
+h2 {
+  margin: 0 0 15px;
+  color: var(--text-color);
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Status section */
+.status-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--error-color);
+  transition: background-color 0.3s ease;
+}
+
+.status-dot.active {
+  background-color: var(--success-color);
+}
+
+/* Settings section */
+.settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.setting-group {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.setting-group h3 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+/* Form elements */
+.hint {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0 0 8px;
+  font-style: italic;
+}
+
+textarea#keywords {
+  width: 100%;
+  height: 80px;
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  resize: vertical;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+textarea#keywords:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(229, 50, 56, 0.1);
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+
+/* Buttons */
+.button-section {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.primary-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.primary-btn:hover {
+  background-color: #c92d32;
+}
+
+.secondary-btn {
+  background-color: var(--error-color);
+  color: white;
+}
+
+.secondary-btn:hover {
+  background-color: #c41b2d;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Log container */
+.log-container {
+  height: 150px;
+  overflow-y: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 0.85rem;
+  background-color: #f8f9fa;
+  scrollbar-width: thin;
+}
+
+.log-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.log-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.log-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.log-entry {
+  margin: 4px 0;
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--border-color);
+  line-height: 1.4;
+}
+
+.log-entry:last-child {
+  border-bottom: none;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
